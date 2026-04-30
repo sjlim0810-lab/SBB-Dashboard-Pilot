@@ -299,7 +299,6 @@ with tab2:
 
     fig.update_layout(
         **base_layout(height=320, barmode="stack"),
-        showlegend=True,
         legend=dict(orientation="h", y=1.08, x=0,
             font=dict(family="monospace", size=10, color="#9ca3af")),
         hovermode="x unified",
@@ -325,7 +324,7 @@ with tab2:
             fig2.add_trace(go.Bar(name=name, x=df["year"], y=df[col],
                 marker_color=color,
                 hovertemplate=f"{name}: €%{{y:.1f}}m<extra></extra>"))
-        fig2.update_layout(**base_layout(height=260, barmode="stack"), showlegend=True,
+        fig2.update_layout(**base_layout(height=260, barmode="stack", showlegend=True),
             legend=dict(orientation="h", y=1.08, x=0,
                 font=dict(family="monospace", size=9, color="#9ca3af")))
         fig2.update_yaxes(tickprefix="€", ticksuffix="m")
@@ -341,7 +340,7 @@ with tab2:
         fig3.add_trace(go.Bar(name="Sync Condenser", x=df["year"], y=df["sc_total"],
             marker_color=COLORS["sc_ds3"],
             hovertemplate="SC: €%{y:.1f}m<extra></extra>"))
-        fig3.update_layout(**base_layout(height=260, barmode="stack"), showlegend=True,
+        fig3.update_layout(**base_layout(height=260, barmode="stack", showlegend=True),
             legend=dict(orientation="h", y=1.08, x=0,
                 font=dict(family="monospace", size=10, color="#9ca3af")))
         fig3.update_yaxes(tickprefix="€", ticksuffix="m")
